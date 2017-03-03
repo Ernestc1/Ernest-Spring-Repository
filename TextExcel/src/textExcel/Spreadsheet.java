@@ -4,15 +4,21 @@ package textExcel;
 
 public class Spreadsheet implements Grid
 {
+	private Cell [][] cellArray;
 	public Spreadsheet(){
-		Cell [][] arrayOfCells = new Cell[20][12];
+		cellArray = new Cell[getRows()][getCols()];
+		for(int i = 0; i < cellArray.length; i++){
+			for(int j = 0; j < cellArray[0].length;j++){
+				cellArray[i][j] = new EmptyCell();
+			}
+		}
 	}
 
 	@Override
 	public String processCommand(String command)
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return "";
 	}
 
 	@Override
