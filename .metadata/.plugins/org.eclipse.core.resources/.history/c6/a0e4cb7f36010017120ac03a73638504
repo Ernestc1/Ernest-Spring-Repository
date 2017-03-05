@@ -1,5 +1,5 @@
 package textExcel;
-import java.util.*;
+
 //Update this file with your own code.
 
 public class SpreadsheetLocation implements Location
@@ -7,17 +7,15 @@ public class SpreadsheetLocation implements Location
     @Override
     public int getRow()
     {
-    	Scanner rows = new Scanner(System.in);
-    	int numberOfRows = rows.nextInt();
-        return numberOfRows;
+        // TODO Auto-generated method stub
+        return 20;
     }
 
     @Override
     public int getCol()
     {
-        Scanner cols = new Scanner(System.in);
-        int numberOfCols = cols.nextInt();
-        return numberOfCols;
+        // TODO Auto-generated method stub
+        return 10;
     }
     
     public SpreadsheetLocation(String cellName)
