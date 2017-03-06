@@ -4,29 +4,28 @@ import java.util.*;
 
 public class SpreadsheetLocation implements Location
 {
-	private int rowNumber;
-	private int colNumber;
     @Override
     public int getRow()
     {
     	
-    	return rowNumber;
+    	return 0;
     }
 
     @Override
     public int getCol()
     {
     	
-        return colNumber;
+        return 0;
     }
     
     public SpreadsheetLocation(String cellName)
     {
     	Scanner loc = new Scanner (System.in);
     	cellName = loc.nextLine();
-    	colNumber = cellName.charAt(0) - 'A';
-    	rowNumber = (int) cellName.substring(1);
-    	
+    	char column = 67;
+    	String row = cellName.substring(1);
+    	int colNumber = column - 'A';
+    	System.out.println(colNumber);
     }
 
 }

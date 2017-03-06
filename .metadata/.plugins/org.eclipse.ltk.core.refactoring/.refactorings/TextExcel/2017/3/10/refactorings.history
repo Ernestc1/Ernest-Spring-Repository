@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;numberOfCols&apos; in &apos;textExcel.SpreadsheetLocation.getCol()&apos; to &apos;colNumber&apos;&#x0D;&#x0A;- Original project: &apos;TextExcel&apos;&#x0D;&#x0A;- Original element: &apos;textExcel.SpreadsheetLocation.getCol().numberOfCols&apos;&#x0D;&#x0A;- Renamed element: &apos;numberOfCols&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;numberOfCols&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;textExcel{SpreadsheetLocation.java[SpreadsheetLocation~getCol@numberOfCols!409!442!413!424!I!0!false" name="colNumber" references="true" stamp="1488820158173" version="1.0"/>
+</session>
