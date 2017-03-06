@@ -22,8 +22,11 @@ public class SpreadsheetLocation implements Location
     
     public SpreadsheetLocation(String cellName)
     {
+    	Scanner loc = new Scanner (System.in);
+    	cellName = "D5";
     	colNumber = cellName.charAt(0) - 'A';
-    	rowNumber = Integer.parseInt(cellName.substring(1))-1;
+    	rowNumber = Integer.parseInt(cellName.substring(1));
+    	System.out.println(colNumber + " " + rowNumber);
     }
 
 }
