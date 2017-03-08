@@ -11,16 +11,13 @@ public class TextExcel
 	{
 		Scanner input = new Scanner(System.in);
 		String command = input.nextLine();
-		Spreadsheet sprsheet = new Spreadsheet();
-		System.out.print(sprsheet.getGridText());
+		Spreadsheet spreadsheet = new Spreadsheet();
+		System.out.print(spreadsheet.getGridText());
 		while (!command.equals("quit")){
 			command = input.nextLine();
-			sprsheet.processCommand(command);
+			spreadsheet.processCommand(command);
 		}
 		input.close();
-		Cell tester = new TextCell ("hello");
-		System.out.println(tester.abbreviatedCellText());
-		System.out.println(tester.fullCellText());
 	    // Add your command loop here
 	}
 }

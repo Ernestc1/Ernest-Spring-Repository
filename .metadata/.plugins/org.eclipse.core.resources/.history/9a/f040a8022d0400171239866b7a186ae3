@@ -1,17 +1,17 @@
 package textExcel;
 
-public class EmptyCell implements Cell {
+public class TextCell implements Cell {
+	private String text;
 
 	@Override
 	public String abbreviatedCellText() {
-		
-		return "          ";
+		return text.substring(0, 10);
 	}
 
 	@Override
 	public String fullCellText() {
 		
-		return "";
+		return text;
 	}
 
 }

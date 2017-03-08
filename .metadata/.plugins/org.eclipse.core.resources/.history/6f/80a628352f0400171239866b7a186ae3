@@ -8,12 +8,12 @@ public class TextCell implements Cell {
 	@Override
 	public String abbreviatedCellText() {
 		
-		return ( + "              ").substring(0, 9);
+		return (text + "              ").substring(0, 9);
 	}
 
 	@Override
 	public String fullCellText() {
 		
-		return ;
+		return text;
 	}
 }

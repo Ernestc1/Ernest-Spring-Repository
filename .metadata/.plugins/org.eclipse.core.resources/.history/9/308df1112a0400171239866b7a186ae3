@@ -5,13 +5,13 @@ public class EmptyCell implements Cell {
 	@Override
 	public String abbreviatedCellText() {
 		
-		return "          ";
+		return null;
 	}
 
 	@Override
 	public String fullCellText() {
 		
-		return "";
+		return null;
 	}
 
 }
