@@ -18,9 +18,6 @@ public class TextExcel
 			sprsheet.processCommand(command);
 		}
 		input.close();
-		Cell tester = new TextCell ("hello");
-		System.out.println(tester.abbreviatedCellText());
-		System.out.println(tester.fullCellText());
 	    // Add your command loop here
 	}
 }

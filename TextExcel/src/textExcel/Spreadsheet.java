@@ -46,8 +46,9 @@ public class Spreadsheet implements Grid
 	@Override
 	public String getGridText()
 	{
-		for(int i = 0; i < cellArray.length; i++){
-			
+		String header = "  |";
+		for(int i = 0; i < this.getCols(); i++){
+			header += ((char) ('A' + i)) + "      |";
 		}
 		return null;
 	}
