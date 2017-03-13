@@ -1,0 +1,24 @@
+package textExcel;
+
+public class TextCell implements Cell {
+	private String text;
+	public TextCell(String cellText){
+	}
+	public void setText(String cellText){
+		cellText = text;
+	}
+	@Override
+	public String abbreviatedCellText() {
+		String cellText = "";
+		setText(cellText);
+		return (cellText + "              ").substring(0, 9);
+		
+	}
+
+	@Override
+	public String fullCellText() {
+		String cellText = "";
+		setText(cellText);
+		return cellText;
+	}
+}
