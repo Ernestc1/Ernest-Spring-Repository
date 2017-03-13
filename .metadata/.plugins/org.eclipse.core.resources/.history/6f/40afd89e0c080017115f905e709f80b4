@@ -20,13 +20,16 @@ public class Spreadsheet implements Grid
 	public String processCommand(String command)
 	{
 		String [] cellContent = command.split(" ");
-		String location = cellContent[0];
-		SpreadsheetLocation loc = new SpreadsheetLocation(location);
-		int rowNumber = loc.getRow();
-		int colNumber = loc.getCol();
-		TextCell content = new TextCell(cellContent[2]);
-		cellArray[rowNumber][colNumber] = content;
-		return content.abbreviatedCellText();
+		if (cellContent[1].equals("=")){
+			String location = cellContent[0];
+			SpreadsheetLocation loc = new SpreadsheetLocation(location);
+			int rowNumber = loc.getRow();
+			int colNumber = loc.getCol();
+			TextCell content = new TextCell(cellContent[2]);
+			cellArray[rowNumber][colNumber] = content;
+			command = content.abbreviatedCellText();
+		}
+		return command;
 	}
 	@Override
 	public int getRows()

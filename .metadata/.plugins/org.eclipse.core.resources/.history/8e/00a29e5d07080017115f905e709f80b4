@@ -19,14 +19,7 @@ public class Spreadsheet implements Grid
 	@Override
 	public String processCommand(String command)
 	{
-		String [] cellContent = command.split(" ");
-		String location = cellContent[0];
-		SpreadsheetLocation loc = new SpreadsheetLocation(location);
-		int rowNumber = loc.getRow();
-		int colNumber = loc.getCol();
-		TextCell content = new TextCell(cellContent[2]);
-		cellArray[rowNumber][colNumber] = content;
-		return content.abbreviatedCellText();
+		return "";
 	}
 	@Override
 	public int getRows()
@@ -68,7 +61,7 @@ public class Spreadsheet implements Grid
 				rows = ((i+1)+ " |");
 			}
 			for(int k = 0; k < cellArray[0].length; k++){
-				rows += cellArray[i][k].abbreviatedCellText() + "|";
+				rows = "|";
 			}
 			rowNumber = "\n";
 			spreadsheet += rows + rowNumber;
