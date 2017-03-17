@@ -19,14 +19,16 @@ public class Spreadsheet implements Grid
 	@Override
 	public String processCommand(String command)
 	{
-		String [] cellContent = command.split(" ");
+		/*Might use parts of this code
+		 * String [] cellContent = command.split(" ");
 		String location = cellContent[0];
 		SpreadsheetLocation loc = new SpreadsheetLocation(location);
 		int rowNumber = loc.getRow();
 		int colNumber = loc.getCol();
 		TextCell content = new TextCell(cellContent[2]);
 		cellArray[rowNumber][colNumber] = content;
-		return content.abbreviatedCellText();
+		return content.abbreviatedCellText();*/
+		return "";
 	}
 	@Override
 	public int getRows()
