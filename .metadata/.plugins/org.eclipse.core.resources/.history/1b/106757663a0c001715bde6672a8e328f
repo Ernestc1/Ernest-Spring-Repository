@@ -1,0 +1,24 @@
+package textExcel;
+
+public class RealCell implements Cell {
+	private String number;
+	public RealCell(String input){
+		number = input;
+	}
+
+	@Override
+	public String abbreviatedCellText() {
+		
+		return null;
+	}
+
+	@Override
+	public String fullCellText() {
+		
+		return null;
+	}
+	public double getDoubleValue(){
+		return Double.parseDouble(number);
+	}
+
+}

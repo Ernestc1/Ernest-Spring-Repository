@@ -1,0 +1,87 @@
+package textExcel;
+
+import java.util.Arrays;
+
+// Update this file with your own code.
+
+public class Spreadsheet implements Grid
+{
+	private Cell [][] cellArray;
+	public Spreadsheet(){
+		cellArray = new Cell[getRows()][getCols()];
+		for (int i = 0; i<getRows(); i++){
+			for(int j = 0; j<getCols(); j++){
+				cellArray[i][j] = new EmptyCell();
+			}
+		}
+	}
+
+	@Override
+	public String processCommand(String command)
+	{
+		String[] content = command.split(" ", 3);
+		if(content.length > 1){
+			String cellLocation = content[0];
+			if(content[0].equalsIgnoreCase("clear")){
+				SpreadsheetLocation loc = new SpreadsheetLocation(cellLocation);
+				cellArray[loc.getRow()][loc.getCol()] = new EmptyCell();
+				return (getGridText());
+			}
+			else if (content[1].equals("=")){
+				SpreadsheetLocation loc = new SpreadsheetLocation(cellLocation);
+				int col = loc.getCol();
+				int row = loc.getRow();
+				cellArray[row][col] = new TextCell(content[2]);
+			}
+			return (getGridText());
+		}
+		return "";
+	}
+	@Override
+	public int getRows()
+	{
+		
+		return 20;
+	}
+
+	@Override
+	public int getCols()
+	{
+		
+		return 12;
+	}
+
+	@Override
+	public Cell getCell(Location loc)
+	{
+		
+		return cellArray[loc.getRow()][loc.getCol()];
+	}
+
+	@Override
+	public String getGridText()
+	{
+		String spreadsheet = "";
+		spreadsheet += "   |";
+		char letter = 'A';
+		for(int i = 0; i < 12; i++){
+			spreadsheet += ((char)(letter)) + "         |";
+			letter += 1;
+		}
+		spreadsheet += "\n";
+		
+		for (int i = 0; i < getRows(); i++){
+			if(i < 9){
+				spreadsheet += (i+1) + "  |";
+			} else {
+				spreadsheet += (i+1) + " |";
+			}
+			for(int j = 0; j < getCols(); j++){
+				spreadsheet += cellArray[i][j].abbreviatedCellText() + "|";
+			}
+			spreadsheet += "\n";
+		}
+		
+		return spreadsheet;
+	}
+}

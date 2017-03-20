@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;input&apos; in &apos;textExcel.PercentCell.PercentCell(...)&apos; to &apos;percent&apos;&#x0D;&#x0A;- Original project: &apos;TextExcel&apos;&#x0D;&#x0A;- Original element: &apos;textExcel.PercentCell.PercentCell(String).input&apos;&#x0D;&#x0A;- Renamed element: &apos;input&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;input&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;textExcel{PercentCell.java[PercentCell~PercentCell~QString;@input!88!99!95!99!QString;!0!true" name="percent" references="true" stamp="1489956231336" version="1.0"/>
+</session>
