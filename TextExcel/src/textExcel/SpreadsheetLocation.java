@@ -21,10 +21,10 @@ public class SpreadsheetLocation implements Location
     
     public SpreadsheetLocation(String cellName)
     {
-    	if(cellName.charAt(0) > 90){
+    	if(cellName.charAt(0) > 'a'){
     		colNumber = cellName.charAt(0) - 'a';
     	}else{
-    	colNumber = (int)cellName.charAt(0) - (int)'A';
+    	colNumber = cellName.charAt(0) - 'A';
     	}
     	rowNumber = Integer.parseInt(cellName.substring(1))-1;
     }
