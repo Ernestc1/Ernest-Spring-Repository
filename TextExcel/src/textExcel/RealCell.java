@@ -16,7 +16,6 @@ public class RealCell implements Cell {
 
 	@Override
 	public String fullCellText() {
-		
 		return number;
 	}
 	public double getDoubleValue(){
