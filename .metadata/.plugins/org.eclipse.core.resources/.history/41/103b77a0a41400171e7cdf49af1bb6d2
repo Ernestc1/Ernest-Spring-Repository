@@ -1,0 +1,50 @@
+package textExcel;
+
+public class FormulaCell extends RealCell{
+	private String formula;
+	public FormulaCell (String input){
+		super(input);
+		formula = input;
+	}
+	public String abbreviatedCellText(){
+		double result = getDoubleValue();
+		return (result + "               ").substring(0, 10);
+	}
+	public String fullCellText(){
+		return super.fullCellText();
+	}
+	public double getDoubleValue(){
+		String [] splitFormula = formula.split(" ");
+		int operator = 1;
+		for(int i = 1; i < splitFormula.length - 1; i+=2){
+			if(splitFormula[operator].equals(("*"))){
+				double result = Double.parseDouble(splitFormula[1]);
+				double firstNum = Double.parseDouble(splitFormula[i + 1]);
+				double secondNum = Double.parseDouble(splitFormula[i + 3]);
+				result += firstNum * secondNum;
+				operator += 2;
+			} else if (splitFormula[operator].equals(("+"))){
+				double result = Double.parseDouble(splitFormula[1]);
+				double firstNum = Double.parseDouble(splitFormula[i + 1]);
+				double secondNum = Double.parseDouble(splitFormula[i + 3]);
+				result += firstNum + secondNum;
+				operator += 2;
+			} else if (splitFormula[operator].equals(("-"))){
+				double result = Double.parseDouble(splitFormula[1]);
+				double firstNum = Double.parseDouble(splitFormula[i + 1]);
+				double secondNum = Double.parseDouble(splitFormula[i + 3]);
+				result += firstNum - secondNum;
+				operator += 2;
+			} 
+			else if (splitFormula[operator].equals(("/"))){
+				double result = Double.parseDouble(splitFormula[1]);
+				double firstNum = Double.parseDouble(splitFormula[i + 1]);
+				double secondNum = Double.parseDouble(splitFormula[i + 3]);
+				result += firstNum / secondNum;
+				operator += 2;
+			} 
+		}
+		return result;
+	}
+}
+

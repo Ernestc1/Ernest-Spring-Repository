@@ -1,6 +1,7 @@
 package textExcel;
 
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 // Update this file with your own code.
 
@@ -18,6 +19,11 @@ public class TextExcel
 		ValueCell testtt = new ValueCell("12345");
 		System.out.println(testtt.abbreviatedCellText());
 		PercentCell testPercent = new PercentCell("11.25%");
+		String formula = "( 1.0 + 5.3 * 3.4 )";
+		String [] splitFormula = formula.split(" ");
+		System.out.println(Arrays.toString(splitFormula));
+		double number = Double.parseDouble(splitFormula[1]);
+		
 		System.out.println(testPercent.abbreviatedCellText());
 		System.out.println(testPercent.fullCellText());
 		Scanner input = new Scanner(System.in);

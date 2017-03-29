@@ -4,31 +4,41 @@ public class FormulaCell extends RealCell{
 	private String formula;
 	public FormulaCell (String input){
 		super(input);
+		formula = input;
 	}
 	public String abbreviatedCellText(){
-		getDoubleValue();
-		return ("               ").substring(0, 10);
+		return (getDoubleValue() + "               ").substring(0, 10);
 	}
 	public String fullCellText(){
-		return super.fullCellText();
+		return formula;
 	}
 	public double getDoubleValue(){
-		formula.substring(1, formula.length()-1);
-		double result = 0.0;
 		String [] splitFormula = formula.split(" ");
-		for(int i = 0; i < splitFormula.length; i++){
-			if(splitFormula[i + 2].equals(("*"))){
-				double firstNum = Double.parseDouble(splitFormula[i + 1]);
-				double secondNum = Double.parseDouble(splitFormula[i + 3]);
-				result = firstNum * secondNum;
-			} else if (splitFormula[i + 2].equals(("+"))){
-				double firstNum = Double.parseDouble(splitFormula[i + 1]);
-				double secondNum = Double.parseDouble(splitFormula[i + 3]);
-				result = firstNum + secondNum;
-			} 
+		int operator = 2;
+		double result = Double.parseDouble(splitFormula[1]);
+		for(int i = 1; i < splitFormula.length - 1; i+=2){
+			if(operator < splitFormula.length){
+				if(splitFormula[operator].equals(("*"))){
+					double secondNum = Double.parseDouble(splitFormula[i + 2]);
+					result *= secondNum;
+					operator += 2;
+				} else if (splitFormula[operator].equals(("+"))){
+					double secondNum = Double.parseDouble(splitFormula[i + 2]);
+					result += secondNum;
+					operator += 2;
+				} else if (splitFormula[operator].equals(("-"))){
+					double secondNum = Double.parseDouble(splitFormula[i + 2]);
+					result -= secondNum;
+					operator += 2;
+				} 
+				else if (splitFormula[operator].equals(("/"))){
+					double secondNum = Double.parseDouble(splitFormula[i + 2]);
+					result /= secondNum;
+					operator += 2;
+				} 
+			}
 		}
-		
-		return 0.0;
+		return result;
 	}
-	
 }
+

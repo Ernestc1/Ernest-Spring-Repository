@@ -1,25 +1,25 @@
 package textExcel;
 
 public class RealCell implements Cell {
-	private String number;
+	private String i;
 	public RealCell(String input){
-		number = input;
+		i = input;
 	}
 	public String getNumber(){
-		return number;
+		return i;
 	}
 
 	@Override
 	public String abbreviatedCellText() {
-		return (number + "                   ").substring(0, 10);
+		return (i + "                   ").substring(0, 10);
 	}
 
 	@Override
 	public String fullCellText() {
-		return number;
+		return i;
 	}
 	public double getDoubleValue(){
-		return Double.parseDouble(number);
+		return Double.parseDouble(i);
 	}
 
 }
