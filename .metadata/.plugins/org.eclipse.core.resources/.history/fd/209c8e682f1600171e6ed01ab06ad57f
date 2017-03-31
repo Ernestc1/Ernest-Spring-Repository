@@ -27,9 +27,9 @@ public class Spreadsheet implements Grid
 					SpreadsheetLocation loc = new SpreadsheetLocation(cellLocation);
 					int col = loc.getCol();
 					int row = loc.getRow();
-					if (content[2].contains("\"") && content[2].contains("\"")){
+					if (content[2].charAt(0) == '"' && content[2].charAt(content[2].length()-1) == '"'){
 						cellArray[row][col] = new TextCell(content[2].substring(1, content[2].length()-1));
-					} else if (content[2].contains("(") && content[2].contains(")")){
+					} else if (content[2].charAt(0) == '(' && content[2].charAt(content[2].length()-1) == ')'){
 						cellArray[row][col] = new FormulaCell(content[2]);
 					} else if(content[2].substring(content[2].length()-1).equals("%")){
 						cellArray[row][col] = new PercentCell(content[2]);

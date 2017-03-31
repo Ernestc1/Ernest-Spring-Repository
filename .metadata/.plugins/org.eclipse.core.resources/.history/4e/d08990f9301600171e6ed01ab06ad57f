@@ -2,7 +2,6 @@ package textExcel;
 
 public class FormulaCell extends RealCell{
 	private String formula;
-	private Spreadsheet sprsheet;
 	public FormulaCell (String input){
 		super(input);
 		formula = input;
@@ -13,8 +12,10 @@ public class FormulaCell extends RealCell{
 	public String fullCellText(){
 		return formula;
 	}
-	
 	public double getDoubleValue(){
+		Spreadsheet spreadsheet = new Spreadsheet();
+		spreadsheet.getGridText();
+		
 		String [] splitFormula = formula.split(" ");
 		int operator = 2;
 		double result = Double.parseDouble(splitFormula[1]);

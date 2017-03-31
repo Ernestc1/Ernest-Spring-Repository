@@ -2,18 +2,16 @@ package textExcel;
 
 public class FormulaCell extends RealCell{
 	private String formula;
-	private Spreadsheet sprsheet;
 	public FormulaCell (String input){
 		super(input);
 		formula = input;
 	}
 	public String abbreviatedCellText(){
-		return (getDoubleValue() + "                   ").substring(0, 10);
+		return (getDoubleValue() + "               ").substring(0, 10);
 	}
 	public String fullCellText(){
 		return formula;
 	}
-	
 	public double getDoubleValue(){
 		String [] splitFormula = formula.split(" ");
 		int operator = 2;

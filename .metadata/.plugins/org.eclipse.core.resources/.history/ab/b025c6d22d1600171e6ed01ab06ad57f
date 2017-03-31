@@ -2,22 +2,21 @@ package textExcel;
 
 public class FormulaCell extends RealCell{
 	private String formula;
-	private Spreadsheet sprsheet;
 	public FormulaCell (String input){
 		super(input);
 		formula = input;
 	}
 	public String abbreviatedCellText(){
-		return (getDoubleValue() + "                   ").substring(0, 10);
+		return (getDoubleValue() + "               ").substring(0, 10);
 	}
 	public String fullCellText(){
 		return formula;
 	}
-	
 	public double getDoubleValue(){
 		String [] splitFormula = formula.split(" ");
 		int operator = 2;
 		double result = Double.parseDouble(splitFormula[1]);
+		if()
 		for(int i = 1; i < splitFormula.length - 1; i+=2){
 			if(operator < splitFormula.length){
 				if(splitFormula[operator].equals(("*"))){

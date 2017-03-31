@@ -23,6 +23,7 @@ public class TextExcel
 		String [] splitFormula = formula.split(" ");
 		System.out.println(Arrays.toString(splitFormula));
 		double number = Double.parseDouble(splitFormula[1]);
+		
 		System.out.println(testPercent.abbreviatedCellText());
 		System.out.println(testPercent.fullCellText());
 		Scanner input = new Scanner(System.in);
