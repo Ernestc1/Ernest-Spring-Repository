@@ -1,7 +1,5 @@
 package textExcel;
-/*Ernest Chen 2nd Period APCS
- * Finished everything except Part A final and Part B final
- */
+
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
